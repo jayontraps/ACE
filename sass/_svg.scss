@@ -1,0 +1,137 @@
+/* BACK-TO-TOP */
+.icon-keyboard-arrow-up {
+	width: 50px;
+	height: 50px;
+	background-color: $primary_color;
+	fill: $white;
+}
+
+
+
+
+// down-arrow
+.down-arr {
+	stroke: $primary_color;
+	stroke-width: 3px;
+}
+
+.downUnderLine {
+	width: 100px;
+ 	height: 18.463px;
+}
+
+
+#close {
+	fill: $white;
+}
+
+.wrap-close {
+	width: 48px; 
+	height:48px;
+}
+
+.icon-keyboard-arrow-down {
+	width:100px; 
+	height:50px;
+	position: absolute;
+	bottom:0;
+	left:0;
+	stroke: $primary_color;
+	stroke-width: 4px;
+	fill: $white;
+}
+
+
+.icon-keyboard-arrow-down-nav {
+	width:20px; 
+	height:25px;
+	position: absolute;
+	top:18px;
+	right:0;
+	stroke: $primary_color;
+	stroke-width: 3px;
+	fill: $white;
+}
+
+// // play buttons
+.play-lg {
+	margin-top: 2rem;
+	width: 160px;
+ 	height: 160px;
+	stroke: $white;
+	stroke-width:8px;
+	fill: transparent; 	 
+	transition: all 0.3s ease;
+	&:hover {
+		cursor: pointer;
+		stroke: $primary_color;
+	}	
+}
+
+.light {
+	.play-lg {
+		stroke: $body_color_dark;
+		&:hover {
+			cursor: pointer;
+			stroke: $primary_color;
+		}
+	}
+}
+
+.play-lg-white {
+	margin-top: 2rem;
+	width: 160px;
+ 	height: 160px;
+	stroke: $white;
+	stroke-width:8px;
+	fill: transparent; 	 
+	transition: all 0.3s ease;
+	&:hover {
+		cursor: pointer;
+		stroke: $primary_color;
+	}	
+}
+
+
+
+// #play-lg {
+// 	stroke: $body_color_dark;
+// 	stroke-width:8px;
+// 	fill: transparent; 	
+// 	// .play-circle {
+// 	// 	stroke: $body_color_dark;
+// 	// }	
+// }
+
+.play-sm {
+	margin-top:0;
+	width: 60px;
+ 	height: 60px;
+ 	stroke: currentColor;
+ 	stroke-width:8px;
+ 	fill: rgba(0,0,0,.5); 	
+	transition: all 0.3s ease;
+ 	// &:hover {
+ 	// 	stroke: $body_color_dark;
+ 	// 	// fill: $body_color_dark;
+ 	// }
+}
+
+
+
+
+// quote
+.icon-quote {
+	width:$body_line_height;
+	height: $body_line_height;
+}
+
+.icon-quote {
+	fill: $quote_grey;
+}
+
+#time-line {
+	stroke: $primary_color;
+	stroke-width: 3px;	
+}
+

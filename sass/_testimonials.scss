@@ -1,0 +1,39 @@
+.credit {
+	font-style: normal;
+	text-align: right;
+
+	// @include breakpoint(tablet-portrait) {
+	// 	margin-right: 4rem;
+	// }
+}
+
+.bxslider-quotes {
+	margin: 0;
+	.credit {
+		text-align: center;
+	}
+}
+
+.quote-block {
+	position: relative;
+	
+	.icon-quote {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 40px;
+		margin-left: -5px;
+		margin-top: -5px;
+		transform: rotate(10deg);
+	}
+
+	blockquote {
+		color: $quote_grey;
+		margin: 0 0 1rem 2rem;
+		font-style: italic;
+		// @include breakpoint(tablet) {
+		// 	margin: 0 4rem 5px 40px;
+		// }
+	}
+}
+

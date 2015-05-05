@@ -22,6 +22,41 @@ if ( ! function_exists( 'ace_setup' ) ) :
  */
 function ace_setup() {
 
+	// override default jQuery version (1.8.2) 
+	if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+	function my_jquery_enqueue() {
+	   wp_deregister_script('jquery');
+	   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js", false, null);
+	   wp_enqueue_script('jquery');
+	}
+
+
+
+
+
+	/*-----------------------------------------------------------------------------------*/
+	/* Custom Ajax calls to custom post types*/
+	/*-----------------------------------------------------------------------------------*/
+	function ajax_function()
+	{     
+	     wp_enqueue_script( 'function', get_template_directory_uri().'/js/ajax.js', array( 'jquery' ), true);
+	     wp_localize_script( 'function', 'my_ajax_script', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
+	}
+	add_action('template_redirect', 'ajax_function');
+
+	$dirName = dirname(__FILE__);
+	$baseName = basename(realpath($dirName));
+	require_once ("$dirName/inc/ajax_functions.php");
+
+	// declare the functions
+	add_action("wp_ajax_nopriv_get_large_slides", "get_large_slides");
+	add_action("wp_ajax_get_large_slides", "get_large_slides");
+
+	
+
+	
+
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -46,7 +81,7 @@ function ace_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -70,10 +105,14 @@ function ace_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'ace_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+	// add_theme_support( 'custom-background', apply_filters( 'ace_custom_background_args', array(
+	// 	'default-color' => 'ffffff',
+	// 	'default-image' => '',
+	// ) ) );
+
+	remove_theme_support('custom-background' );
+
+
 }
 endif; // ace_setup
 add_action( 'after_setup_theme', 'ace_setup' );
@@ -90,8 +129,8 @@ function ace_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'ace_widgets_init' );
@@ -100,11 +139,11 @@ add_action( 'widgets_init', 'ace_widgets_init' );
  * Enqueue scripts and styles.
  */
 function ace_scripts() {
-	wp_enqueue_style( 'ace-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'ace-style-definition', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'ace-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	// wp_enqueue_script( 'ace-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'ace-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	// wp_enqueue_script( 'ace-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -136,3 +175,10 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load custom functions.
+ */
+require get_template_directory() . '/inc/custom_functions.php';
+
+

@@ -6,27 +6,44 @@
  */
 
 get_header(); ?>
+	
+<div class="wrap template_2">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<?php include "inc/logo-2.php"; ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+	<div role="main" id="main" class="blog-pages">
 
-			<?php get_template_part( 'content', 'single' ); ?>
+		<div class="inner_page_hero"></div>	
 
-			<?php the_post_navigation(); ?>
+		<div class="innerWrap">
+			<div class="col-2-3">							
+				<div class="content-blog">
+					<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
+						<?php get_template_part( 'content', 'single' ); ?>
 
-		<?php endwhile; // end of the loop. ?>
+						<?php the_post_navigation(); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+						<?php
+							// If comments are open or we have at least one comment, load up the comment template
+							// if ( comments_open() || get_comments_number() ) :
+							// 	comments_template();
+							// endif;
+						?>
 
-<?php get_sidebar(); ?>
+					<?php endwhile; // end of the loop. ?>
+				</div>
+			</div>	
+
+			<div class="col-1-3">
+				<?php get_sidebar(); ?>
+			</div>
+
+
+
+
+
+
+</div>
+
 <?php get_footer(); ?>

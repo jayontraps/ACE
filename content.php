@@ -6,7 +6,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
@@ -17,12 +17,15 @@
 
 	<div class="entry-content">
 		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ace' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+			the_excerpt();
+			// /* translators: %s: Name of current post */
+			// the_content( sprintf(
+			// 	__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ace' ),
+			// 	the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			// ) );
 		?>
+		<a class="blog_link" href="<?php the_permalink() ?>">View Full Article ></a>
+
 
 		<?php
 			wp_link_pages( array(
@@ -31,8 +34,10 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
+<!-- 
 	<footer class="entry-footer">
-		<?php ace_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+		<?php // ace_entry_footer(); ?>
+	</footer>
+ -->
+
 </article><!-- #post-## -->

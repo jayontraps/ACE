@@ -1,0 +1,14 @@
+.archive-list {
+	> li {
+		padding: 2rem 0;
+		border-bottom: 2px dashed $light_grey;
+		&:first-of-type {
+			padding-top: 0;
+		}
+
+		.sharedaddy {
+			display: none;
+		}
+	}
+}
+

@@ -1,0 +1,73 @@
+
+.footer-container {
+	position: relative;
+
+	h2, p {
+		color: $white;
+		text-align: center;
+	}	
+
+	background-color: $black;
+		
+	a.ace_more {
+		margin: 0;
+		text-align: center;
+	}
+	
+	.content {
+		
+		padding: 2rem 0;
+
+		@include breakpoint(mobile) {
+			padding: 3rem 0;
+		}
+		
+	}
+		
+}
+
+.footer-legals {
+	background-color: $body_color_dark;
+	color: $white;
+	padding: 2rem 0;
+}
+
+// .legal-nav {
+// 	width: 70%;
+// 	margin: 3rem auto;
+// 	@extend .cf;
+// 	list-style: disc;
+// 	> li {
+// 		float: left;
+// 		margin-right: 3rem;
+// 		&:last-of-type {
+// 			margin-right: 0;
+// 		}
+// 	}	
+// }
+
+
+.legal-nav {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+
+@include breakpoint(tablet-portrait) {
+	.legal-nav {
+		list-style: disc;
+		text-align: center;
+		> li {
+			display: inline-block;
+			margin-right: 3rem;
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}	
+	}	
+}
+
+
+
+

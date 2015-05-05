@@ -1,0 +1,162 @@
+/* -----------------------------------------
+   Typography Styles
+----------------------------------------- */
+body,
+button,
+input,
+select,
+textarea  {
+	font-family: $body_font;
+	font-size:$body_font_size;
+	line-height:$body_line_height;
+  font-weight: $body_font_weight;
+	color:$body_color;
+}
+
+
+/* Links */
+a {
+	color: $link_color;
+}
+a:visited {
+	color: $link_color;
+}
+
+ .no-touch {
+
+	a:hover,
+	a:focus,
+	a:active {
+		color: $link_hover_color;
+
+	}
+}
+
+
+
+
+// Disable default touch browser tap highlights
+a {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+// a.active {
+// 	background-color:red;
+// }
+
+
+
+
+/* heaadings */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: $letter_spacing;
+  line-height: $heading_line_height;
+  font-family: $heading_font;
+  font-weight: $heading_font_weight;
+  color: $body_color_dark;
+  text-transform: uppercase;
+}
+
+
+@include breakpoint(tablet-portrait) {
+  h1 {
+    font-size: 3em;
+    margin: 0.563em 0;
+  }
+
+  h2 {
+    font-weight: $heading_font_weight_bold;
+    // font-size: 2em;    
+    font-size: 2.25em; // Franklin
+    margin: 0.625em 0;
+  }
+
+  h3 {
+    font-weight: $heading_font_weight_bold;
+    font-size: 1.5em;
+    margin: 1.313em 0;
+  }
+
+  h4 {
+    font-size: 1.313em;
+    margin: 1.313em 0;
+  }
+
+  h5 {
+    font-size: 1.125em;
+    margin: 1.313em 0;
+  }
+
+  h6 {
+    font-size: 1em;
+    margin: 0.75em 0;
+  }  
+}
+
+
+
+
+
+/* Text meant only for screen readers */
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+
+
+// .hero
+ .tagline { 
+    .tagWrap {        
+      font-family: $heading_font_2;
+      font-weight: $heading_font_weight_bold;
+
+      font-size: 4rem; // franklin      
+      // font-size: 4rem; // raleway
+      line-height: 3rem;
+      text-transform: uppercase;
+      // letter-spacing:.02em; // Open sans    
+      letter-spacing:.04em; // franklin   
+    }
+
+    .subWrap {
+      font-family: $heading_font;
+      font-weight: $heading_font_weight;
+      font-size: 1.75rem;    // franklin 
+      // font-size: 1.2rem;   // raleway     
+    }  
+}
+
+@include breakpoint(tablet-between) {
+    .tagline { 
+        .tagWrap {
+            // font-size: 4rem; // Open Sans Condensed                  
+            font-size: 4rem; // franklin      
+            // font-size: 4rem; // raleway
+            line-height: 4rem;  // Open Sans Condensed           
+            // line-height: 4.5rem; // franlin
+        }
+        .subWrap {
+          font-size: 2rem;    // franklin 
+          // font-size: 1.2rem;   // raleway     
+        }          
+    }
+}
+
+
+
+/* global */
+
+.center {
+  text-align: center;
+}
+
+.lg-text {
+  font-size: 1.3em;
+  color: $body_color_dark;
+  margin-bottom: 0;
+}
+
+

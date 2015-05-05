@@ -1,0 +1,31 @@
+.staff-bios {
+	margin: 0;
+	padding: 0;
+	li {
+		text-align: center;
+		margin-bottom: 2rem;
+		.staff-name {
+			font-size: 1.5rem;
+			color: $body_color_dark;
+			margin-bottom: 1rem;
+		}
+		.staff-role {
+			margin-top: 1rem;
+			font-style: italic;			
+		}
+		.staff-bio {
+			p:last-of-type {
+				margin-bottom: 0;
+			}			
+		}
+
+		@include breakpoint(tablet-portrait) {
+			margin-bottom: 0;
+			float: left;
+			@include defineCols(2, 10%);
+		}	
+	}
+	img {
+		max-width: 200px;
+	}
+}

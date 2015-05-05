@@ -1,0 +1,15 @@
+.prog-sections {
+	section {
+		padding: 0 0 3rem 0;
+		border-bottom: 1px dashed $body_color;
+		&:last-of-type {
+			border-bottom: none;
+		}
+	}
+	h4 {
+		margin-bottom: 0;
+	}
+	p {
+		margin-top: 0;
+	}
+}

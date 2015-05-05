@@ -1,0 +1,93 @@
+.video-thumbs-1 {
+
+	padding: 3rem 0;
+	h2 {
+		text-align: center;
+		font-family: $body_font;
+		font-size: 2rem;
+	}
+	.v-thumb-wrap {
+		clear: both;
+	}
+
+	@include breakpoint(tablet-portrait) {
+		.v-thumb-wrap {		
+			&:nth-child(odd) {
+				.col-1-2 {
+					float: right;
+					width: 50%;
+				}
+				.v-info {
+					float:right;
+					text-align: right;
+				}
+				.ace_hr {
+					margin: 0;
+					display: block;
+					float: right;
+				}	
+				p {
+					clear: both;
+					padding-top: 0;
+				}			
+			}		
+			.v-info {
+				float: left;
+				text-align: left;	
+				width: 70%;
+				padding-top: 3rem;
+			}	
+			.ace_hr {
+				margin: 0;
+			}	
+		}
+	}
+
+	.v-info {
+		text-align: center;	
+		
+		h3 {
+			margin-bottom: 0;	
+		}	
+		p {
+			margin-top: 0;
+			color: $quote-grey;
+			font-size: $body_font_size_sm;
+		}
+	}
+
+
+	.v-thumb {
+		max-width: 20rem;
+		margin: 0 auto;
+		position: relative;
+
+		.v-play {
+
+			.play-btn {
+				fill: rgba(255,255,255,.7);
+			}
+
+			width: 80px;
+			height: 80px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -40px 0 0 -40px;
+		}
+
+		&:hover {
+			cursor: pointer;
+			.play-btn {
+				fill: rgba(255,255,255,1);
+			}		
+		}	
+	}
+
+
+}
+
+
+
+
+

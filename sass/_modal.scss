@@ -1,0 +1,71 @@
+.modal {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+  background: rgb(0, 0, 0);
+  background: $modal-overlay-color;
+
+ 	> .content {
+    width: 92.5%;
+    // min-height: 92.5%;
+    // max-height: 92.5%;
+    top: 3.75%;
+ 		position: relative;
+ 		margin: 0 auto;
+ 		padding: 1rem;
+ 		// background: $white;
+   //  background: rgba(255,255,255, .5);
+    background: transparent;
+ 		z-index: 2;
+ 		overflow: auto;
+
+    @include breakpoint(tablet-portrait) {
+      width: 80%;
+      // min-height: 80%;
+      // max-height: 80%;
+      top: 10%;
+    }
+
+    // @include breakpoint(medium-screen) {
+    //   width: 50%;
+    //   // min-height: 50%;
+    //   // max-height: 65%;
+    //   top: 25%;    
+    // }
+ 	  > .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      z-index: 3;
+    }
+  }
+  &, > .content {
+    visibility: hidden;
+    opacity: 0;
+  }
+ 	&.active {
+    transition: opacity 400ms ease;
+    &, > .content {
+    visibility: visible;
+    opacity: 1;
+    }
+ 	}
+}
+
+.modal {
+  .row {
+    padding: 2rem;
+  }
+}
+
+/* fit vids addition */
+.fluid-width-video-wrapper iframe, .fluid-width-video-wrapper object, .fluid-width-video-wrapper embed {
+  z-index: 9999999;
+}
+
+
+

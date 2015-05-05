@@ -1,0 +1,50 @@
+.logo {
+    width: 70px;
+    // height: 43px;
+    float: left;
+    margin:1rem 0 0 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    
+    @include breakpoint(tablet-portrait) {
+       width: 100px;
+       height: 85px;
+    }
+
+    &:hover {
+        // background-color: $primary_color;
+
+        .wrap-logo {
+          fill: $primary_color;
+        }
+
+    }
+
+    a {
+        outline:none;
+    }
+    &.logo-temp-2 {
+        width: 70px;
+        height: 60px;        
+    }
+}
+
+
+
+
+.wrap-logo {
+    // box-sizing: content-box;
+    // width: 50px;
+    // display: block;
+    // padding: 5px;
+    fill: $white;
+    transition: all 0.3s ease-out;
+}
+
+#logo-frame {
+    fill: transparent;
+}
+

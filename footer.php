@@ -8,15 +8,82 @@
  */
 ?>
 
-	</div><!-- #content -->
+	</div><!-- role="main" -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'ace' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'ace' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'ace' ), 'ace', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+   	<nav role="complementary" class="nav-wrap cf js-nav" itemscope itemtype='https://schema.org/SiteNavigationElement'>
+
+		<?php wp_nav_menu( array( 
+		'theme_location' => 'primary',
+		'menu_class'      => 'navmenu' ) ); ?>
+
+		<?php include "inc/social-nav.php"; ?> 
+
+   	</nav>
+
+   	<footer id="contact" class="footer-container clear">
+
+    <div class="innerWrap">
+
+        <div class="footer-cols cf">
+            
+            <div class="col-1-2">
+
+                <div class="content">
+
+                    <h2>Follow Us..</h2>
+
+                    <?php include "inc/social-nav.php"; ?>        
+                
+                </div>
+
+            </div>
+            
+
+
+            <div class="col-1-2">
+                <div class="content">
+                <h2>Join Our mailing List</h2>                               
+                <?php include "inc/mc-signup.php"; ?>
+                </div>
+        </div>
+
+    </div>
+
+
+</footer>
+
+<?php
+    if ( is_dynamic_sidebar('footer_widget') ) {
+        dynamic_sidebar('footer_widget');
+    }
+    ?><!-- Widget location to hold social icons -->
+<!-- 
+<div class="wrap footer-legals">
+    <div class="innerWrap">
+        <ul class="legal-nav">
+            <li>Tel: 0121 314 5830</li>
+            <li>Fax: 0121 753 1075</li>
+            <li>Email: admin@acedanceandmusic.com</li>
+        </ul>
+    </div>
+    
+    <div class="innerWrap">
+        <ul class="legal-nav">
+            <li>Company number – 3471844</li>
+            <li>Charity number – 11374490</li>
+            <li>VAT number – 906952994</li>
+        </ul>
+    </div>
+</div>
+ -->
+<div id="backToTop">
+    <svg class="icon-keyboard-arrow-up">
+        <use xlink:href="#icon-keyboard-arrow-up"></use>
+    </svg>             
+</div>
+	
+
+</div><!-- .wrap -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

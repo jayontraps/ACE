@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Optional min width */
+html {
+  min-width: 20rem;
+}
+
+body {
+	background-color: $white;
+}
+
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+// .ace_hr {
+// 	display: block;	
+// 	padding: 0;
+// 	width: 3.75rem;
+// 	border: solid $primary_color;	
+// 	border-width: 4px 0 0;	
+// }
+
+
+.ace-line {	
+	display: block;
+	padding: 0;
+	width: 3.75rem;
+	border: solid $primary_color;	
+	border-width: 4px 0 0;	
+}
+
+.center, .centered {
+	.ace-line {
+		margin: 0 auto;
+	}
+}
+
+
+.dark {
+	background-color: $black;
+	color: $white;
+}
+
+
+
+.parallax {
+  background-attachment: fixed !important;
+}
+
+.oldie, .ie9 {
+	.parallax {
+		background-attachment: static !important;
+	}
+}
+
+
+
+
+
+
+
+
+// body {
+// 	@include breakpoint(tablet) {
+// 		background-color: grey;
+// 	}	
+// 	@include breakpoint(medium-screen) {
+// 		background-color: orange;
+// 	}	
+// 	@include breakpoint(large-screen) {
+// 		background-color: blue;
+// 	}
+// }

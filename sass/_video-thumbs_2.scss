@@ -1,0 +1,198 @@
+.video-thumbs-2 {
+	
+	.v-thumb-wrap {
+		position: relative;	
+	}
+
+
+	.centered {
+	  width: 50%;
+	  padding: 1em;
+	  background: rgba(0,0,0,.5);
+	  border: 1px solid $white;
+	  color: white;
+	}
+
+	svg {
+		fill: $white;
+	}
+
+
+
+
+	.inner-grid {
+
+		.v-thumb-wrap {
+			float: left;			
+			@include defineCols(2,0);	
+
+			
+
+			// height: 440px;
+			
+			img {
+				transition: all 800ms ease;
+				opacity: 0;
+
+				&:hover {
+					cursor: pointer;
+					opacity: 1;
+				}
+			}
+
+			&:nth-child(1) {
+				background-image: 
+				linear-gradient(
+				  // rgba(222, 0, 48, 0.5),
+				  // rgba(222, 0, 48, 0.5)
+
+				  rgba(145, 0, 31, 0.5),
+				  rgba(145, 0, 31, 0.5)
+				),
+				url(../img/video-thumbs/square/mana-compressor.jpg);
+				background-size: cover;	
+			}	
+			&:nth-child(2) {
+				background-image: 
+				linear-gradient(
+				  rgba(0, 0, 0, 0.5),
+				  rgba(0, 0, 0, 0.5)
+				),
+				url(../img/video-thumbs/square/skin-compressor.jpg);
+				background-size: cover;				
+			}	
+			&:nth-child(3) {
+				background-image: 
+				linear-gradient(
+				  rgba(0, 0, 0, 0.5),
+				  rgba(0, 0, 0, 0.5)
+				),
+				url(../img/video-thumbs/square/youth-compressor.jpg);
+				background-size: cover;				
+			}	
+			&:nth-child(4) {
+				background-image: 
+				linear-gradient(
+				  // rgba(222, 0, 48, 0.5),
+				  // rgba(222, 0, 48, 0.5)
+
+				  rgba(145, 0, 31, 0.5),
+				  rgba(145, 0, 31, 0.5)
+				),
+				url(../img/video-thumbs/square/switch-compressor.jpg);
+				background-size: cover;				
+			}	
+
+		}	
+	}
+
+	.v-thumb {
+
+		img {
+			vertical-align: top;
+		}
+		
+	}
+
+	.v-play {
+		display: none;
+	}
+	.v-info {
+		display: none;
+	}	
+}
+
+
+
+// .video-thumbs {
+// 	padding: 3rem 0;
+// 	h2 {
+// 		text-align: center;
+// 		font-family: $body_font;
+// 		font-size: 2rem;
+// 	}
+// }
+
+// .v-thumb-wrap {
+// 	clear: both;
+// }
+
+// @include breakpoint(tablet-portrait) {
+// 	.v-thumb-wrap {		
+// 		&:nth-child(odd) {
+// 			.col-1-2 {
+// 				float: right;
+// 				width: 50%;
+// 			}
+// 			.v-info {
+// 				float:right;
+// 				text-align: right;
+// 			}
+// 			.ace_hr {
+// 				margin: 0;
+// 				display: block;
+// 				float: right;
+// 			}	
+// 			p {
+// 				clear: both;
+// 				padding-top: 0;
+// 			}			
+// 		}		
+// 		.v-info {
+// 			float: left;
+// 			text-align: left;	
+// 			width: 70%;
+// 			padding-top: 3rem;
+// 		}	
+// 		.ace_hr {
+// 			margin: 0;
+// 		}	
+// 	}
+// }
+
+// .v-info {
+
+// 	text-align: center;	
+	
+// 	h3 {
+// 		margin-bottom: 0;	
+// 	}	
+
+// 	p {
+// 		margin-top: 0;
+// 		color: $quote-grey;
+// 		font-size: $body_font_size_sm;
+// 	}
+// }
+
+
+// .v-thumb {
+// 	max-width: 20rem;
+// 	margin: 0 auto;
+// 	position: relative;
+
+// 	.v-play {
+
+// 		.play-btn {
+// 			fill: rgba(255,255,255,.7);
+// 		}
+
+// 		width: 80px;
+// 		height: 80px;
+// 		position: absolute;
+// 		top: 50%;
+// 		left: 50%;
+// 		margin: -40px 0 0 -40px;
+// 	}
+
+// 	&:hover {
+// 		cursor: pointer;
+// 		.play-btn {
+// 			fill: rgba(255,255,255,1);
+// 		}		
+// 	}	
+
+// }
+
+
+

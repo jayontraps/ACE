@@ -7,8 +7,19 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div class="wrap template_2">
+
+	<?php include "inc/logo-2.php"; ?>
+
+	<div role="main" id="main" class="blog-pages">
+
+		<div class="inner_page_hero"></div>	
+
+		<div class="innerWrap">	
+
+			<div class="col-2-3">
+
+				<div class="content-blog">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -38,8 +49,17 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
+
+				</div>
+
+			</div>
+
+			<div class="col-1-3">
+				<?php get_sidebar(); ?>
+			</div>
+
+		</div><!-- .innerWrap -->
+
+<?php // get_sidebar(); ?>
 <?php get_footer(); ?>

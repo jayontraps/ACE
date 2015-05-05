@@ -1,0 +1,72 @@
+.quilt {
+	
+	padding: 10rem 0;
+	// background-color: #000;
+	img {
+		vertical-align: top;
+	}
+	.quilt-item {
+		position: relative;
+		width: 100%;
+		float: none;	
+		clear: left;	
+
+
+	}
+
+
+	@include breakpoint(tablet-landscape){
+		.two-column {
+			width: 50%;
+			float: left;
+			> div:first-child {
+				margin-bottom: 3rem;
+			}
+		}
+
+		.two-column-inner {
+
+			.quilt-item {
+
+				clear: none;
+
+				&:nth-child(1) {
+					width: 62.6%;
+					float: left;
+				}
+				&:nth-child(2) {
+					width: 37.4%;
+					float: left;
+				}
+			}
+											
+		}
+
+		
+		.quilt-item {
+
+			// .centered {
+			// 	opacity: 0;
+			// 	width: 50%;
+			// 	padding: 1em;
+			// 	background: rgba(0,0,0,.5);
+			// 	border: 1px solid $white;
+			// 	color: $white;
+			// 	h3 {
+			// 		color: $white;
+			// 	}
+			// }
+
+			&:hover {
+				.mask {
+					opacity: 1;
+				}
+				// .centered {
+				// 	opacity: 1;
+				// }			
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,79 @@
+.wrap { 
+  width: 100%;
+  overflow: hidden;  
+  position: relative;
+}
+
+.innerWrap {
+	width: 92%;
+	max-width: $max-width;
+	margin: 0 auto;	
+	position: relative;
+	@extend .cf;
+	@include breakpoint(medium-screen) {
+		width: 100%;
+	}
+
+	&.video-thumbs {
+		max-width: $max-width-medium;
+	}
+	
+	&.medium-width {
+		max-width: $max-width-medium;
+	}
+
+	&.small-width {
+		max-width: $max-width-small;
+	}
+
+	&.logo-head {
+		max-width: 96%;
+	}	
+}
+
+
+
+	
+
+.intro {
+	width: 80%;
+	margin: 0 auto;
+	// text-align: center;
+
+	@include breakpoint(tablet-landscape) {
+		width: 50%;
+	}
+}
+
+.inner-into {
+	text-align: left;
+
+	@include breakpoint(tablet) {
+		width: 90%;
+		margin: 0 auto;
+		padding-top: 1rem;
+	}
+}
+
+
+
+.feature-section {
+	padding: 2rem 0;
+
+	@include breakpoint(tablet) {
+		padding: 4rem 0;
+	}
+}
+
+// .demo {
+// 	.feature-section {
+// 		padding: 4rem 0;
+// 	}	
+// }
+
+.stripe {
+	background-color: $bg-grey;
+  	border-top: 1px solid #e5e5e5;
+  	border-bottom: 1px solid #e5e5e5;
+}
+

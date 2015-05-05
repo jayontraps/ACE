@@ -54,7 +54,7 @@ function the_post_navigation() {
 	?>
 	<nav class="navigation post-navigation" role="navigation">
 		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'ace' ); ?></h2>
-		<div class="nav-links">
+		<div class="nav-links cf">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', '%title' );
 				next_post_link( '<div class="nav-next">%link</div>', '%title' );
@@ -72,7 +72,8 @@ if ( ! function_exists( 'ace_posted_on' ) ) :
 function ace_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		// $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';		
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -84,7 +85,8 @@ function ace_posted_on() {
 
 	$posted_on = sprintf(
 		_x( 'Posted on %s', 'post date', 'ace' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		// '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		'<span>' . $time_string . '</span>'
 	);
 
 	$byline = sprintf(
@@ -113,15 +115,15 @@ function ace_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', 'ace' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'ace' ) . '</span>', $tags_list );
+			printf( '<br><span class="tags-links">' . __( 'Tagged %1$s', 'ace' ) . '</span>', $tags_list );
 		}
 	}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'ace' ), __( '1 Comment', 'ace' ), __( '% Comments', 'ace' ) );
-		echo '</span>';
-	}
+	// if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+	// 	echo '<span class="comments-link">';
+	// 	comments_popup_link( __( 'Leave a comment', 'ace' ), __( '1 Comment', 'ace' ), __( '% Comments', 'ace' ) );
+	// 	echo '</span>';
+	// }
 
 	edit_post_link( __( 'Edit', 'ace' ), '<span class="edit-link">', '</span>' );
 }

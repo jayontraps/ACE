@@ -1,0 +1,72 @@
+.video-thumbs-3 {
+	background-color: $black;
+	.wrap {
+		margin:0 auto -1rem auto;
+		max-width: 1770px;
+
+		  &:after {
+				/* Or @extend clearfix */
+				content: "";
+				display: table;
+				clear: both;
+			}
+	}
+	
+	.v-thumb-wrap {
+		position: relative;	
+	}
+
+
+
+
+	// .centered {
+	//   width: 50%;
+	//   padding: 1em;
+	// }
+
+
+	
+
+
+
+
+	
+
+
+
+	.v-thumb {
+
+		.v-img {
+			vertical-align: top;
+			// opacity: 1;
+			transition: opacity 300ms ease;
+		}
+
+		h2 {
+
+			color: $white;
+		}
+
+		.play-sm {
+			margin-top: 1rem;
+			color: $white;
+			// transition: all 400ms ease;
+		}		
+
+		&:hover {
+			cursor: pointer;
+
+			.play-sm {
+				fill: rgba(0,0,0,.8); 	
+			}
+		}
+		
+	}
+}
+
+
+
+
+
+
+
