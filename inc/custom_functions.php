@@ -2,7 +2,7 @@
 
 function enqueue_styles_scripts() { 
 	
-	wp_enqueue_style( 'ace-style', get_template_directory_uri() . '/build/screen.css', array(), '104' );
+	wp_enqueue_style( 'ace-style', get_template_directory_uri() . '/build/screen.css', array(), '106' );
 	
 	wp_enqueue_script( 'ace-modenizr', get_template_directory_uri() . '/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js', array(), false);		
 

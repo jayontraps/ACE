@@ -98,6 +98,27 @@ get_header(); ?>
 <?php endif; ?>
 
 
+<?php if( have_rows('tour_date') ): ?>
+
+	<section class="wrap dark prod-section">
+		<div class="innerWrap small-width">
+			<h2>Tour Dates</h2>
+			<span class="ace-line"></span>
+
+	        <ul class="tour-dates">
+
+			<?php while( have_rows('tour_date') ): the_row(); 
+				include "inc/inc-tour-list.php"; 
+			 	endwhile; 
+		 	?>
+
+			</ul>
+		</div>
+	</section>
+
+<?php endif; ?>
+
+
 
 
 <?php if( have_rows('quote_block') ): ?>

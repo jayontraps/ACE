@@ -10,7 +10,7 @@
 	?>
 
 	<section id="section_<?php echo $index; ?>" class="wrap feature-section" data-innermenu="<?php if (get_sub_field('inner_menu_title')){ the_sub_field('inner_menu_title');}?>">	
-		<div class="innerWrap intro center <?php if (get_field('center')){ echo 'center';}?>">	
+		<div class="innerWrap intro <?php if (get_sub_field('center')){ echo 'center';}?>">	
 			<h2><?php echo $heading; ?></h2>
 			<span class="ace-line"></span>
 		    <?php echo $content; ?>

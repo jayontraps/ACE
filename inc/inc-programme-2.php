@@ -33,9 +33,23 @@
 
             <?php if ( $the_query->have_posts() ) : ?>
 
-                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                    <h4><b><?php the_title(); ?>:</b> <?php if (get_field('age_group')) {the_field('age_group'); echo ", "; };  if (get_field('times')) {the_field('times');}?></h4>
-                    <?php if (get_field('content')) {the_field('content');} ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+                    $image = get_field('image');
+                ?>
+                    <div class="class-item">
+
+                        <h4><b><?php the_title(); ?>:</b> <?php if (get_field('age_group')) {the_field('age_group'); echo ", "; };  if (get_field('times')) {the_field('times');}?></h4>
+
+                        <?php if (get_field('content')) {the_field('content');} ?>
+
+                        <?php if( !empty($image) ): ?>
+
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+                        <?php endif; ?>
+
+                    </div>
+
                 <?php endwhile; ?>
 
                 <?php wp_reset_postdata(); ?>
@@ -64,9 +78,24 @@
 
             <?php if ( $the_query->have_posts() ) : ?>
 
-                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
+                        $image = get_field('image');
+                    ?>
+
+                <div class="class-item">
+
                     <h4><b><?php the_title(); ?>:</b> <?php if (get_field('age_group')) {the_field('age_group'); echo ", "; };  if (get_field('times')) {the_field('times');}?></h4>
+
                     <?php if (get_field('content')) {the_field('content');} ?>
+
+                    <?php if( !empty($image) ): ?>
+
+                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+                    <?php endif; ?>
+                
+                </div>
+                
                 <?php endwhile; ?>
 
                 <?php wp_reset_postdata(); ?>

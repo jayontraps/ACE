@@ -25,6 +25,8 @@ get_header(); ?>
 			include "inc/inc-page-section.php";
 		}?>
 
+		<?php include "inc/inc-staff-bios.php"; ?>
+
 		<?php if (get_field('include_quotes') ) {
 			include "inc/inc-quotes.php"; 
 		} ?>
