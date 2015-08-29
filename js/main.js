@@ -263,7 +263,8 @@ if ($('.bxslider').length) {
 
 	$('.bxslider').bxSlider({
 		startSlide: 1,
-		infiniteLoop: true
+		infiniteLoop: true,
+		captions: true
 	});	 		
 }
 

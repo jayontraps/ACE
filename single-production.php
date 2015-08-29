@@ -85,9 +85,13 @@ get_header(); ?>
 
 			<?php while( have_rows('image_slides') ): the_row(); 
 				$image = get_sub_field('image');
+
 			?>
 
-				<li><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" /></li>		
+
+
+
+				<li><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" title="<?php if (get_sub_field('caption')) { the_sub_field('caption');} ?>" /></li>		
 
 			<?php endwhile; ?>
 

@@ -15,6 +15,8 @@
 <!-- 		<div class="logo-item _10"></div>
 		<div class="logo-item _11"></div> -->
 		<div class="logo-item ff"></div>
-		<div class="logo-item arts"></div>
+		<div class="logo-item arts">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ACE_lottery_png_black.png" alt="arts council logo">
+		</div>
 	</div>
 </div>

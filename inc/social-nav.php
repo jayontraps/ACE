@@ -7,7 +7,7 @@
     </li>
 
     <li>
-        <a href="http://www.flickr.com/photos/acedanceandmusic/" class="icon-flickr">
+        <a href="https://www.flickr.com/photos/132492302@N02/" class="icon-flickr">
             <svg class="icon icon-flickr-with-circle"><use xlink:href="#icon-flickr-with-circle"></use>
             </svg>
         </a>
