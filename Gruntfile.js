@@ -63,16 +63,14 @@ module.exports = function(grunt) {
           mangle: false
         },
         files: {
-          // Where to combine and minify JS files, followed by list of which files to include and exclude
-          // 'build/build.min.js' : ['js/*.js']
-          'build/build.min.js' : ['js/vendor/jquery.bxslider.js', 'js/jquery.fitvids.js', 'js/functions.js', 'js/plugins.js', 'js/main.js']          
+          'build/build.min.js' : ['js/vendor/jquery.bxslider.js', 'js/jquery.fitvids.js', 'js/functions.js', 'js/plugins.js', 'js/main.js'],
+          'build/ace-overlay.js' :  ['js/js.cookie.js', 'js/mana-overlay.js']       
         },
       },
       prod: {
         files: {
-          // Where to combine and minify JS files, followed by list of which files to include and exclude
-          // 'build/build.min.js' : ['js/*.js'],
-          'build/build.min.js' : ['js/vendor/jquery.bxslider.js', 'js/jquery.fitvids.js', 'js/functions.js', 'js/plugins.js', 'js/main.js'],           
+          'build/build.min.js' : ['js/vendor/jquery.bxslider.js', 'js/jquery.fitvids.js', 'js/functions.js', 'js/plugins.js', 'js/main.js'],
+          'build/ace-overlay.js' :  ['js/js.cookie.js', 'js/mana-overlay.js'],             
           'js/vendor/gumby.min.js' : ['gumby/*.js']
         },
       },
@@ -84,6 +82,10 @@ module.exports = function(grunt) {
         src: ['js/vendor/waypoints.min.js','js/vendor/gumby.min.js', 'js/vendor/wow.min.js', 'build/build.min.js'],
         dest: 'build/all.js',
       },
+      overlay: {
+        src: ['js/vendor/TweenLite.min.js','js/vendor/TimelineLite.min.js', 'js/vendor/CSSPlugin.min.js', 'js/vendor/DrawSVGPlugin.min.js', 'build/ace-overlay.js'],
+        dest: 'build/overlay.min.js',
+      }
     },    
 
     // Watch options: what tasks to run when changes to files are saved
@@ -92,12 +94,12 @@ module.exports = function(grunt) {
         livereload: true
       },
       css: {
-        files: ['sass/*.scss'],
+        files: ['sass/**/*.scss'],
         tasks: ['sass:dev', 'autoprefixer']
       },
       js: {
         files: ['js/*.js', '!build/build.min.js'], // Watch for changes in JS files except for script.min.js to avoid reload loops
-        tasks: ['jshint', 'uglify:dev', 'concat']
+        tasks: ['jshint', 'uglify:dev', 'concat'] 
       }
     },
 

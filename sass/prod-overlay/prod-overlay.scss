@@ -1,0 +1,207 @@
+#load-over-lay {
+	background-color: #000;
+	width: 100%;
+	height:100%;
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right: 0;
+	margin: 0;
+	padding:0;
+	z-index: 999999;
+	opacity: 1;
+	transition: all ease .2ms;
+
+	&.done {
+		opacity: 0;
+	}
+
+    display: block;
+}
+
+
+.layer {
+    background-color: transparent;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    height:100%;
+    width: 100%;
+    margin:0;
+    padding:0;            
+}
+
+
+#layer-1 {
+    z-index: 1; 
+    background-image: url(../img/mana-fullscreen.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    visibility: hidden;
+}
+
+#layer-2 {
+    z-index: 2;            
+    visibility: hidden;
+}
+
+#layer-3 {
+    z-index: 3;         
+}
+
+
+
+
+
+/* ACE presents */
+svg.presents {
+    width: 200px;
+    height: 15px;
+    position: absolute;
+    top: 20px;
+    left: 50%;     
+    margin-left: -100px;
+
+    @include breakpoint(tablet-portrait) { 
+        width: 300px;
+        height: 22px;
+        position: absolute;
+        top: 20px;
+        left: 50%;     
+        margin-left: -150px;    
+    }
+}
+.ace-presents {
+    fill:#FFFFFF;
+    visibility: hidden;
+}
+
+
+
+
+/* Close button */
+svg.close-overlay {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 10px;
+	right:20px; 
+	fill: #fafafa; 
+	transition: all 0.3s ease;    
+    &:hover {
+		cursor: pointer;
+		fill: $primary_color;
+	} 
+    @include breakpoint(tablet-portrait) { 
+        width: 40px;
+        height: 40px;
+        top: 15px;
+    }
+
+}
+
+.close-btn {
+    stroke-width: 0px;        
+}
+
+
+
+
+
+/* production title */
+svg.ace-prod-title {
+    position: absolute;
+    width: 300px;
+    height: 87px;
+    bottom: 80px;          
+    left: 50%;
+    margin-left: -150px;
+    @include breakpoint(tablet-portrait) {
+        width: 400px;
+        height: 116px; 
+        margin-left: -200px;
+    }
+}
+
+.prod-name{
+    fill:transparent;
+    stroke: #fafafa ;
+    stroke-width: 1px;
+    visibility: hidden;
+}
+
+
+
+/* sub-title */
+svg.ace-sub-title {
+    position: absolute;
+    width: 200px;
+    height: 26px;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.sub-title-layer{
+    visibility: hidden;
+    fill:#fafafa;
+}
+
+
+
+
+/* play button */
+svg.play-btn {
+    width: 100px;
+    height: 100px;        
+    position: absolute;
+    top: 35%;
+    left:50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    stroke: #fafafa;
+    stroke-width: 4px;
+    fill: transparent;
+    transition: all 0.3s ease;    
+    &:hover {
+		cursor: pointer;
+		stroke: $primary_color;
+	}  
+
+    @include breakpoint(tablet-portrait) {
+        top: 50%;
+        width: 120px;
+        height: 120px;
+        margin-left: -60px;
+        margin-top: -200px;        
+    }        
+}
+
+.play-overlay { 
+    visibility: hidden;          
+}
+
+
+a.action-btn {
+    visibility: hidden;
+    width:200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -35px;
+    text-align: center;
+}
+
+.touring {
+    display: block;
+    font-size: 1.5rem;
+}
+
+
+
+

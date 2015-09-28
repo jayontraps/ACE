@@ -17,10 +17,16 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'content', 'page' ); ?>				
+			<section class="wrap feature-section">	
+				<div class="innerWrap intro">	
+					<h2><?php the_field('page_heading'); ?></h2>
+					<span class="ace-line"></span>
+				    <?php the_content(); ?>			    		    		    	
+				</div>
+			</section>		
 
-		<?php endwhile; // end of the loop. ?>
+										
 
+		<?php endwhile; // end of the loop.
 
-
-		<?php get_footer(); ?>
+		get_footer(); ?>

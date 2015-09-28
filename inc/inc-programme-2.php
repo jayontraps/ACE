@@ -5,8 +5,9 @@
 
                 <div class="sub-nav vertical" gumby-fixed="#programme" gumby-pin="#third" gumby-offset="50px">
                     <ul id="sub-nav" class="">
-                        <li><a href="#first">Children and Young People</a></li>
-                        <li><a href="#second">ACE Youth</a></li>
+                        <li><a href="#section-children">Children and Young People</a></li>
+                        <li><a href="#section-youth">ACE Youth</a></li>
+                        <li><a href="#section-african_dance_drumming">African dance and drumming</a></li>
                         <li><a href="#third">Get Involved</a></li>
                     </ul>
                 </div>  
@@ -17,94 +18,18 @@
 
         <div class="col-2-3 prog-sections">
             
-            <section id="first">
-                <h3>Children and Young People - Saturday Class Programme</h3>
-                
             <?php 
-            $args = array(
-                'post_type' => 'classes',
-                'posts_per_page' => -1,
-                'cat' => 5,
-                'orderby' => 'menu_order',
-                'order'   => 'ASC'
-            );
-            // the query
-            $the_query = new WP_Query( $args ); ?>
 
-            <?php if ( $the_query->have_posts() ) : ?>
+            $the_cat_ID = 5;
+            include 'class-listing-template.php';
+            $the_cat_ID = 6;
+            include 'class-listing-template.php';
+            $the_cat_ID = 55;
+            include 'class-listing-template.php';
 
-                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-                    $image = get_field('image');
-                ?>
-                    <div class="class-item">
-
-                        <h4><b><?php the_title(); ?>:</b> <?php if (get_field('age_group')) {the_field('age_group'); echo ", "; };  if (get_field('times')) {the_field('times');}?></h4>
-
-                        <?php if (get_field('content')) {the_field('content');} ?>
-
-                        <?php if( !empty($image) ): ?>
-
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-
-                        <?php endif; ?>
-
-                    </div>
-
-                <?php endwhile; ?>
-
-                <?php wp_reset_postdata(); ?>
-
-            <?php else : ?>
-                <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-            <?php endif; ?>
-            
-            </section>
-
-            <section id="second">
-                <h3>ACE Youth Thursday Class Programme</h3>
-                <p>ACE Youth are the youth dance company of ACE dance and music. ACE Youth classes are a mixture of different styles such as contemporary, ballet, African and street style dance. We aim to encourage and inspire young people to have freedom of expression through dance.</p>
+            ?>
 
 
-                <?php 
-            $args = array(
-                'post_type' => 'classes',
-                'posts_per_page' => -1,
-                'cat' => 6,
-                'orderby' => 'menu_order',
-                'order'   => 'ASC'
-            );
-            // the query
-            $the_query = new WP_Query( $args ); ?>
-
-            <?php if ( $the_query->have_posts() ) : ?>
-
-                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-                        $image = get_field('image');
-                    ?>
-
-                <div class="class-item">
-
-                    <h4><b><?php the_title(); ?>:</b> <?php if (get_field('age_group')) {the_field('age_group'); echo ", "; };  if (get_field('times')) {the_field('times');}?></h4>
-
-                    <?php if (get_field('content')) {the_field('content');} ?>
-
-                    <?php if( !empty($image) ): ?>
-
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-
-                    <?php endif; ?>
-                
-                </div>
-                
-                <?php endwhile; ?>
-
-                <?php wp_reset_postdata(); ?>
-
-            <?php else : ?>
-                <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-            <?php endif; ?>
-
-            </section>
             <section id="third">
                 <h3>Get Involved</h3>
                 <p><a href="mailto:education@acedanceandmusic.com">Contact us</a> for more info.</p>                

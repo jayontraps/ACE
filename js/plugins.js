@@ -41,17 +41,9 @@ $(document).ready( function() {
 
 
 
-// testing
 
-// if ($('.bxslider-home').length) {
 
-// 	$('.bxslider-home').bxSlider({
-// 		mode: 'fade',
-// 		auto: true,
-// 		pause: 6000,
-// 		speed: 2000
-// 	});	 		
-// }   	    	
+
 
 
 
@@ -59,17 +51,16 @@ $(document).ready( function() {
 
 // ajax in slids if desktop and .home
 
-function load_slides(home_mq) {
-  if (home_mq.matches) {
-	get_large_slides();
-  } 
-}
+// function load_slides(home_mq) {
+//   if (home_mq.matches) {
+// 	get_large_slides();
+//   } 
+// }
 
-
-$(document).ready( function() {
-	if ($('body').hasClass('home')) {
-		var home_mq = window.matchMedia("(min-width: 768px)");
-		home_mq.addListener(load_slides);
-		load_slides(home_mq);		 	
-	}
-});
+// $(document).ready( function() {
+// 	if ($('body').hasClass('home')) {
+// 		var home_mq = window.matchMedia("(min-width: 768px)");
+// 		home_mq.addListener(load_slides);
+// 		load_slides(home_mq);		 	
+// 	}
+// });

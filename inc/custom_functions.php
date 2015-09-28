@@ -2,13 +2,17 @@
 
 function enqueue_styles_scripts() { 
 	
-	wp_enqueue_style( 'ace-style', get_template_directory_uri() . '/build/screen.css', array(), '201507' );
+	wp_enqueue_style( 'ace-style', get_template_directory_uri() . '/build/screen.css', array(), '20150927' );
 	
-	wp_enqueue_script( 'ace-modenizr', get_template_directory_uri() . '/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js', array(), false);		
+	wp_enqueue_script( 'ace-modenizr', get_template_directory_uri() . '/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js', array(), false);	
+
+	// wp_enqueue_script( 'ace-Froogaloop', 'https://f.vimeocdn.com/js/froogaloop2.min.js', array('jquery'), false);		
 
 	wp_enqueue_style('gfonts', 'http://fonts.googleapis.com/css?family=Lora|Fjalla+One');
 
-	wp_enqueue_script( 'ace-all', get_template_directory_uri() . '/build/all.js', array('jquery'),'201507', true);	
+	wp_enqueue_script( 'ace-all', get_template_directory_uri() . '/build/all.js', array('jquery'),'20150917', true);	
+
+	wp_enqueue_script( 'ace-overlay', get_template_directory_uri() . '/build/overlay.min.js', array('jquery'),'20150917');	
 
 } 
 

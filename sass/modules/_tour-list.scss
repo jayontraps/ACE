@@ -6,6 +6,18 @@
 
 	a {
 		color: $white;
+		&:hover {
+			color: $primary_color;
+		}
+		&:active {
+			color: $primary_color;
+		}
+		&:visited {
+			color: $primary_color;
+		}
+		&:focus {
+			color: $primary_color;
+		}
 	}
 }
 

@@ -52,6 +52,28 @@ get_header(); ?>
 	    </div> 
 
 
+	<?php if( have_rows('tour_date') ): ?>
+
+		<section id="tour" class="wrap dark tour-dates">
+			<div class="innerWrap medium-width">
+				<h2>Tour Dates</h2>
+				<span class="ace-line"></span>
+
+		        <ul class="tour-dates">
+
+				<?php while( have_rows('tour_date') ): the_row(); 
+					include "inc/inc-tour-list.php"; 
+				 	endwhile; 
+			 	?>
+
+				</ul>
+			</div>
+		</section>
+
+	<?php endif; ?>
+
+
+
 	    <section id="opening" class="wrap dark prod-section">
 			<div class="innerWrap medium-width">
 				<div class="col col-2-5">	
@@ -70,11 +92,16 @@ get_header(); ?>
 
 
 			<div class="col col-3-5 summary">
-				<?php the_content(); ?>
+				<?php the_content(); ?>			
 			</div>
 		</div>
 	</section>
 
+
+
+
+
+	
 
 
 <?php if( have_rows('image_slides') ): ?>
@@ -88,9 +115,6 @@ get_header(); ?>
 
 			?>
 
-
-
-
 				<li><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" title="<?php if (get_sub_field('caption')) { the_sub_field('caption');} ?>" /></li>		
 
 			<?php endwhile; ?>
@@ -102,25 +126,41 @@ get_header(); ?>
 <?php endif; ?>
 
 
-<?php if( have_rows('tour_date') ): ?>
+<?php if (is_single("Mana")) : ?>
 
-	<section class="wrap dark prod-section">
-		<div class="innerWrap small-width">
-			<h2>Tour Dates</h2>
-			<span class="ace-line"></span>
+	<section class="wrap dark credits">
+		<div class="innerWrap medium-width">
 
-	        <ul class="tour-dates">
+			<div class="col-1-2">
+				<h3>Creatives</h3>
+				<span class="ace-line"></span>
+				<ul>
+					<li><span class="credit-role">Choreography:</span> Jose Agudo (A Thousand Shepherds), Vincent Mantsoe &amp; Gail Parmel (Mana)</li>
+					<li><span class="credit-role">Director:</span> Gail Parmel</li>
+					<li><span class="credit-role">Composer:</span> Vincenzo Lagmagna</li>
+					<li><span class="credit-role">Musical Director:</span> Ian Parmel</li>
+					<li><span class="credit-role">Dramaturg (A Thousand Shepherds):</span> Lou Cope</li>
+					<li><span class="credit-role">Costume Design:</span> Kimie Nakano</li>
+					<li><span class="credit-role">Lighting Design:</span> Gary Bowman</li>
+				</ul>
+			</div>
+			<div class="col-1-2">
+				<h3>Dancers</h3>
+				<span class="ace-line"></span>
+				
+				<ul>
+					<li>Iona Waite, Jerome Wilkes,<br> Sophia Preidel, Tiffany Bell,<br> Tom Tindall, Yukiko Masui.</li>
+				</ul>
+			</div>
 
-			<?php while( have_rows('tour_date') ): the_row(); 
-				include "inc/inc-tour-list.php"; 
-			 	endwhile; 
-		 	?>
-
-			</ul>
 		</div>
 	</section>
 
-<?php endif; ?>
+<?php endif;?>
+
+
+
+
 
 
 

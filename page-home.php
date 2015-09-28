@@ -14,14 +14,17 @@ get_header(); ?>
 	<div role="main" id="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-		
-		<div id="homewrap"><!-- ajax in slides on desktop -->
+
+			
+		<div id="homewrap">		
+			<!-- ajax in slides on desktop -->
 			<?php
 				if (get_field('include_hero_image')) {
 					include "inc/inc-hero.php";
 				} 
 		 	 ?>
 	 	</div>
+	
 
 	 	 <section id="opening" <?php post_class("wrap feature-section"); ?> data-innermenu="What we do">
 

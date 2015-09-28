@@ -3,6 +3,7 @@
 		<?php 
 			$start_date = get_sub_field('start_date');
 			$venue_link = get_sub_field('venue_link');
+			$show_time = get_sub_field('show_time');
 			// $start_date = 19881123 (23/11/1988)
 			// extract Y,M,D
 			$y = substr($start_date, 0, 4);
@@ -35,9 +36,9 @@
 				$end_res = date('jS M Y', $end_time);
 
 
-				echo '<div class="date meta_grid">' . $start_part . ' - '. $end_res . '</div>';
+				echo '<div class="date meta_grid">' . $start_part . ' - '. $end_res . ', ' . $show_time . '</div>';
 			} else {
-				echo '<div class="date meta_grid">' . $start_full . '</div>';
+				echo '<div class="date meta_grid">' . $start_full . ', ' . $show_time . '</div>';
 			}
 		?>		
 
@@ -46,7 +47,7 @@
 			<div class="meta_grid">
 
 			<?php if( $venue_link ): ?>
-				<a href="<?php echo $venue_link; ?>">
+				<a href="<?php echo $venue_link; ?>" target="_blank">
 			<?php endif; ?>
 
 				<span class="venue"><?php the_sub_field('venue'); ?></span>

@@ -21,6 +21,7 @@
 
 <body <?php body_class(); ?>>
 
+	<div id="load-over-lay"></div>
 	<div id="page" class="hfeed site wrap">
 	
 	<?php include "inc/svg-defs.php"; ?>

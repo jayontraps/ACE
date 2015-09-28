@@ -1,66 +1,73 @@
-@import "normalize";
-@import "fonts";
-@import "vars";
-@import "getActiveMQ";
-@import "mixins";
-@import "typography";
-@import "svg";
-@import "grid";
-@import "global";
-@import "layout";
+@import "global/normalize";
+@import "global/fonts";
+@import "global/vars";
+@import "global/getActiveMQ";
+@import "global/mixins";
+@import "global/typography";
+@import "global/svg";
+@import "global/grid";
+@import "global/global";
+@import "global/layout";
 
 // menu
-@import "nav";
-@import "nav-toggle";
-@import "nav-desktop";
-// @import "off-canvas-menu";
-@import "off-canvas";
+@import "nav/nav";
+@import "nav/nav-toggle";
+@import "nav/nav-desktop";
+@import "nav/off-canvas";
+@import "nav/sub-nav";
+
+
+/* video */
+@import "video/modal";
+@import 'video/video-thumbs';
+@import 'video/video-thumbs_2';
+@import 'video/video-thumbs_3';
 
 
 
-@import "modal";
-@import 'video-thumbs';
-@import 'video-thumbs_2';
-@import 'video-thumbs_3';
 // @import "parallax_header";
 // @import "parallax-demo";
-@import "elements";
-@import "hero";
-@import "logo";
-@import "header-content";
-@import "logo-list";
-@import "footer";
-@import "social-nav";
-@import "programme-section";
-@import "modules";
-@import "schedule";
-@import "quilt";
-@import "testimonials";
-@import "timeline-list";
-@import "options-menu";
-@import "productions-section";
-@import "tour-list";
-@import "mc-signup";
-@import "staff-bios";
-@import "credits-list";
-@import "archive-list";
-@import "blog";
-// gumby
-@import "gumby-fixed";
-@import "sub-nav";
+
+
+/* modules */
+@import "modules/elements";
+@import "modules/hero";
+@import "modules/logo";
+@import "modules/header-content";
+@import "modules/logo-list";
+@import "modules/footer";
+@import "modules/social-nav";
+@import "modules/programme-section";
+@import "modules/modules";
+@import "modules/schedule";
+@import "modules/quilt";
+@import "modules/testimonials";
+@import "modules/timeline-list";
+@import "modules/options-menu";
+@import "modules/productions-section";
+@import "modules/tour-list";
+@import "modules/mc-signup";
+@import "modules/staff-bios";
+@import "modules/credits-list";
+@import "modules/archive-list";
+@import "modules/blog";
+
 
 // template 2
-@import "template-2";
+@import "global/template-2";
 
 /* sliders */
-@import "slider-bxslider-default";
-@import "slider-home-page";
-@import "slider-bxslider-ace";
+@import "sliders/slider-bxslider-default";
+@import "sliders/slider-home-page";
+@import "sliders/slider-bxslider-ace";
+
+/* utils */
+@import 'utils/animations';
+@import "utils/helpers";
+@import "utils/gumby-fixed";
 
 
-@import "layout-stage-two";
+@import "prod-overlay/prod-overlay.scss";
 
-@import 'animations';
-@import "helpers";
 
-@import "style-guide";
+

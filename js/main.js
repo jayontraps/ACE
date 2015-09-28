@@ -155,10 +155,10 @@ jQuery(document).ready(function($) {
 	// cache the iframe 
 	// modal switch for video on gallery page
 	$('.switch').on('click', function(e) {
-		var $this = $(this),
+		var $this = $(this);
 			// currentModal = $this.prev();
 			// modalId = currentModal.attr('id');
-			currentContainer = $this.prev().find('.row');
+			var currentContainer = $this.prev().find('.row');
 			currentContainer.fitVids();
 			// console.log(currentModal.attr('id'));
 
@@ -177,29 +177,45 @@ jQuery(document).ready(function($) {
 
 
 	// modal switch for video on individual production pages
-	$('.switch-prod').on('click', function(e) {
-		var $this = $(this),
-			// currentModal = $this.prev();
-			currentModal = $('#modal');			
-			currentContainer = currentModal.find('.row');
-			if (currentModal.hasClass('video-loaded') === false) {
-				$(currentContainer).fitVids();
-				currentModal.addClass('video-loaded');
-			}
+	$(".switch-prod").on('click', function(e) {		
+		// var $this = $(this);
+		// currentModal = $this.prev();
+		var currentModal = $('#modal');			
+		var currentContainer = currentModal.find('.row');
+		if (currentModal.hasClass('video-loaded') === false) {
+			$(currentContainer).fitVids();
+			currentModal.addClass('video-loaded');
+		}
 		currentModal.addClass('active');
 	});		
 
 
 
-	$('.close').on('click', function(e) {
-		e.preventDefault();
-		var $this = $(this),
-		 	currentVideo = $this.next().find('iframe'),
-			currentVideoSrc = currentVideo.attr('src');	
+	$(".close").on('click', function(e) {
 
-		$this.closest('.modal').removeClass('active');
-		currentVideo.attr('src', '');
-		currentVideo.attr('src', currentVideoSrc);
+		var $this = $(this);
+
+		if ($this.attr('id') !== "js-close-overlay") {
+
+			e.preventDefault();
+			
+			var currentVideo = $this.next().find('iframe'),
+				currentVideoSrc = currentVideo.attr('src');	
+
+			$this.closest('.modal').removeClass('active');
+			currentVideo.attr('src', '');
+			currentVideo.attr('src', currentVideoSrc);
+		}
+
+
+
+		// if ($this.attr('id') === "js-close-overlay") {
+		// 	var overlayDiv = document.getElementById("load-over-lay");
+		// 	$(overlayDiv)
+		// 		.addClass("done")
+		// 		.delay( 200 )
+		// 		.remove();				
+		// }
 	});	
 
 

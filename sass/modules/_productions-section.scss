@@ -11,6 +11,7 @@
 .prod-section {
 
 	padding: 6rem 0;
+
 	p {
 		margin-top: 0;
 		padding-top: 0;
@@ -32,3 +33,19 @@
 	font-size: 2rem;
 	line-height: 2.5rem;
 }
+
+.credits {
+	padding-bottom: 3rem;
+	h3 {
+		color: $white;
+	}
+}
+.credit-role {
+	color: lighten($primary_color, 10);
+}
+
+// .tour-dates {
+// 	padding-bottom: 3rem;
+// }
+
+
