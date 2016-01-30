@@ -63,15 +63,19 @@ module.exports = function(grunt) {
           mangle: false
         },
         files: {
-          'build/build.min.js' : ['js/vendor/jquery.bxslider.js', 'js/jquery.fitvids.js', 'js/functions.js', 'js/plugins.js', 'js/main.js'],
-          'build/ace-overlay.js' :  ['js/js.cookie.js', 'js/mana-overlay.js']       
+          'build/build.min.js' : ['js/vendor/jquery.bxslider.js', 'js/jquery.fitvids.js', 'js/functions.js', 'js/plugins.js', 'js/main.js']
+
+          // 'build/ace-overlay.js' :  ['js/js.cookie.js', 'js/mana-overlay.js'] 
+
         },
       },
       prod: {
         files: {
           'build/build.min.js' : ['js/vendor/jquery.bxslider.js', 'js/jquery.fitvids.js', 'js/functions.js', 'js/plugins.js', 'js/main.js'],
-          'build/ace-overlay.js' :  ['js/js.cookie.js', 'js/mana-overlay.js'],             
           'js/vendor/gumby.min.js' : ['gumby/*.js']
+
+          // 'build/ace-overlay.js' :  ['js/js.cookie.js', 'js/mana-overlay.js'],             
+
         },
       },
     },
@@ -81,11 +85,13 @@ module.exports = function(grunt) {
       dist: {
         src: ['js/vendor/waypoints.min.js','js/vendor/gumby.min.js', 'js/vendor/wow.min.js', 'build/build.min.js'],
         dest: 'build/all.js',
-      },
-      overlay: {
-        src: ['js/vendor/TweenLite.min.js','js/vendor/TimelineLite.min.js', 'js/vendor/CSSPlugin.min.js', 'js/vendor/DrawSVGPlugin.min.js', 'build/ace-overlay.js'],
-        dest: 'build/overlay.min.js',
       }
+
+      // overlay: {
+      //   src: ['js/vendor/TweenLite.min.js','js/vendor/TimelineLite.min.js', 'js/vendor/CSSPlugin.min.js', 'js/vendor/DrawSVGPlugin.min.js', 'build/ace-overlay.js'],
+      //   dest: 'build/overlay.min.js',
+      // }
+
     },    
 
     // Watch options: what tasks to run when changes to files are saved
@@ -130,34 +136,17 @@ module.exports = function(grunt) {
     },    
 
 
-    // connect: {
-    //   server: {
-    //     options: {
-    //       port: 9001,
-    //       base: './',
-    //       open: true
-    //     }
-    //   }
-    // }
-
   });
 
   // Load the plugins
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-browser-sync');
-
   grunt.loadNpmTasks('grunt-contrib-concat');  
-  // grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-jshint');  
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-autoprefixer');
 
-
-
-  // grunt.registerTask('default', ['jshint','connect','sass:dev','uglify:dev','autoprefixer','watch']);
-  
-  // grunt.registerTask('production', ['jshint','connect','sass:prod','uglify:prod', 'autoprefixer']);
 
   grunt.registerTask('default', ['jshint', 'sass:dev','uglify:dev','autoprefixer', 'concat', 'browserSync', 'watch']);
   

@@ -1,1 +1,108 @@
-!function(a){if("function"==typeof define&&define.amd)define(a);else if("object"==typeof exports)module.exports=a();else{var b=window.Cookies,c=window.Cookies=a();c.noConflict=function(){return window.Cookies=b,c}}}(function(){function a(){for(var a=0,b={};a<arguments.length;a++){var c=arguments[a];for(var d in c)b[d]=c[d]}return b}function b(c){function d(b,e,f){var g;if(arguments.length>1){if(f=a({path:"/"},d.defaults,f),"number"==typeof f.expires){var h=new Date;h.setMilliseconds(h.getMilliseconds()+864e5*f.expires),f.expires=h}try{g=JSON.stringify(e),/^[\{\[]/.test(g)&&(e=g)}catch(i){}return e=encodeURIComponent(String(e)),e=e.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,decodeURIComponent),b=encodeURIComponent(String(b)),b=b.replace(/%(23|24|26|2B|5E|60|7C)/g,decodeURIComponent),b=b.replace(/[\(\)]/g,escape),document.cookie=[b,"=",e,f.expires&&"; expires="+f.expires.toUTCString(),f.path&&"; path="+f.path,f.domain&&"; domain="+f.domain,f.secure?"; secure":""].join("")}b||(g={});for(var j=document.cookie?document.cookie.split("; "):[],k=/(%[0-9A-Z]{2})+/g,l=0;l<j.length;l++){var m=j[l].split("="),n=m[0].replace(k,decodeURIComponent),o=m.slice(1).join("=");'"'===o.charAt(0)&&(o=o.slice(1,-1));try{if(o=c&&c(o,n)||o.replace(k,decodeURIComponent),this.json)try{o=JSON.parse(o)}catch(i){}if(b===n){g=o;break}b||(g[n]=o)}catch(i){}}return g}return d.get=d.set=d,d.getJSON=function(){return d.apply({json:!0},[].slice.call(arguments))},d.defaults={},d.remove=function(b,c){d(b,"",a(c,{expires:-1}))},d.withConverter=b,d}return b()}),function(a){a(document).ready(function(){var b=document.getElementById("load-over-lay");if(a("body").hasClass("home")){var c="http://acedanceandmusic.com/";a.ajax({url:c+"overlay.html",dataType:"html",success:function(c){a(b).append(c)},complete:function(){var c=window.location.protocol+"//"+window.location.host+"/production/mana/#tour",d=document.getElementById("action-btn");a(d).attr("href",c);var e=document.getElementById("layer-1"),f=(document.getElementById("presents"),document.getElementById("layer-2")),g=document.getElementById("close-overlay"),h=new TimelineLite;TweenLite.set(f,{visibility:"visible"}),TweenLite.set(".prod-name",{visibility:"visible"}),TweenLite.set(".sub-title-layer",{visibility:"visible"}),TweenLite.set(".ace-presents",{visibility:"visible"}),TweenLite.set(".action-btn",{visibility:"visible"}),h.from(".ace-presents",2,{autoAlpha:0},"kickoff").from(e,8,{autoAlpha:0},"kickoff").from(".prod-name",2,{drawSVG:0,ease:Power1.easeInOut},"feature-=6").from(".sub-title-layer",1,{autoAlpha:0},"feature-=4").from(".action-btn",1,{scale:.95,autoAlpha:0},"feature-=4"),a(g).on("click",function(){a(b).addClass("done").delay(200).remove()})}})}else b.style.display="none"})}(jQuery);
+!function(factory) {
+    if ("function" == typeof define && define.amd) define(factory); else if ("object" == typeof exports) module.exports = factory(); else {
+        var _OldCookies = window.Cookies, api = window.Cookies = factory();
+        api.noConflict = function() {
+            return window.Cookies = _OldCookies, api;
+        };
+    }
+}(function() {
+    function extend() {
+        for (var i = 0, result = {}; i < arguments.length; i++) {
+            var attributes = arguments[i];
+            for (var key in attributes) result[key] = attributes[key];
+        }
+        return result;
+    }
+    function init(converter) {
+        function api(key, value, attributes) {
+            var result;
+            if (arguments.length > 1) {
+                if (attributes = extend({
+                    path: "/"
+                }, api.defaults, attributes), "number" == typeof attributes.expires) {
+                    var expires = new Date();
+                    expires.setMilliseconds(expires.getMilliseconds() + 864e5 * attributes.expires), 
+                    attributes.expires = expires;
+                }
+                try {
+                    result = JSON.stringify(value), /^[\{\[]/.test(result) && (value = result);
+                } catch (e) {}
+                return value = encodeURIComponent(String(value)), value = value.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent), 
+                key = encodeURIComponent(String(key)), key = key.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent), 
+                key = key.replace(/[\(\)]/g, escape), document.cookie = [ key, "=", value, attributes.expires && "; expires=" + attributes.expires.toUTCString(), attributes.path && "; path=" + attributes.path, attributes.domain && "; domain=" + attributes.domain, attributes.secure ? "; secure" : "" ].join("");
+            }
+            key || (result = {});
+            for (var cookies = document.cookie ? document.cookie.split("; ") : [], rdecode = /(%[0-9A-Z]{2})+/g, i = 0; i < cookies.length; i++) {
+                var parts = cookies[i].split("="), name = parts[0].replace(rdecode, decodeURIComponent), cookie = parts.slice(1).join("=");
+                '"' === cookie.charAt(0) && (cookie = cookie.slice(1, -1));
+                try {
+                    if (cookie = converter && converter(cookie, name) || cookie.replace(rdecode, decodeURIComponent), 
+                    this.json) try {
+                        cookie = JSON.parse(cookie);
+                    } catch (e) {}
+                    if (key === name) {
+                        result = cookie;
+                        break;
+                    }
+                    key || (result[name] = cookie);
+                } catch (e) {}
+            }
+            return result;
+        }
+        return api.get = api.set = api, api.getJSON = function() {
+            return api.apply({
+                json: !0
+            }, [].slice.call(arguments));
+        }, api.defaults = {}, api.remove = function(key, attributes) {
+            api(key, "", extend(attributes, {
+                expires: -1
+            }));
+        }, api.withConverter = init, api;
+    }
+    return init();
+}), function($) {
+    $(document).ready(function() {
+        var overlayDiv = document.getElementById("load-over-lay");
+        if ($("body").hasClass("home")) {
+            var rootUrl = "http://acedanceandmusic.com/";
+            $.ajax({
+                url: rootUrl + "overlay.html",
+                dataType: "html",
+                success: function(data) {
+                    $(overlayDiv).append(data);
+                },
+                complete: function() {
+                    var manaUrl = window.location.protocol + "//" + window.location.host + "/production/mana/#tour", actionBtn = document.getElementById("action-btn");
+                    $(actionBtn).attr("href", manaUrl);
+                    var backGround = document.getElementById("layer-1"), layerTwo = (document.getElementById("presents"), 
+                    document.getElementById("layer-2")), closeOverlay = document.getElementById("close-overlay"), tl = new TimelineLite();
+                    TweenLite.set(layerTwo, {
+                        visibility: "visible"
+                    }), TweenLite.set(".prod-name", {
+                        visibility: "visible"
+                    }), TweenLite.set(".sub-title-layer", {
+                        visibility: "visible"
+                    }), TweenLite.set(".ace-presents", {
+                        visibility: "visible"
+                    }), TweenLite.set(".action-btn", {
+                        visibility: "visible"
+                    }), tl.from(".ace-presents", 2, {
+                        autoAlpha: 0
+                    }, "kickoff").from(backGround, 8, {
+                        autoAlpha: 0
+                    }, "kickoff").from(".prod-name", 2, {
+                        drawSVG: 0,
+                        ease: Power1.easeInOut
+                    }, "feature-=6").from(".sub-title-layer", 1, {
+                        autoAlpha: 0
+                    }, "feature-=4").from(".action-btn", 1, {
+                        scale: .95,
+                        autoAlpha: 0
+                    }, "feature-=4"), $(closeOverlay).on("click", function() {
+                        $(overlayDiv).addClass("done").delay(200).remove();
+                    });
+                }
+            });
+        } else overlayDiv.style.display = "none";
+    });
+}(jQuery);
