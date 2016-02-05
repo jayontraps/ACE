@@ -30,10 +30,15 @@ get_header(); ?>
 			                </div>  
 
 			                <span class="ace-line"></span>
+							
+							<?php if (get_field('video_embed_code')) : ?>
+										
+						        <svg class="play-lg switch-prod" viewBox="0 0 321 321">
+						            <use xlink:href="#play-lg"></use>
+						        </svg> 
 
-					        <svg class="play-lg switch-prod" viewBox="0 0 321 321">
-					            <use xlink:href="#play-lg"></use>
-					        </svg> 
+					    	<?php endif; ?>
+
 
 			                <div class="subWrap prod-subWrap">
 			                    <?php the_field('sub_heading'); ?>
@@ -126,7 +131,51 @@ get_header(); ?>
 <?php endif; ?>
 
 
-<?php if (is_single("Mana")) : ?>
+
+
+
+<?php if( have_rows('credits') ): ?>
+
+	<section class="wrap dark credits">
+		<div class="innerWrap medium-width">
+
+			<div class="col-1-2">
+				<h3>Creatives</h3>
+				<span class="ace-line"></span>
+				<ul>
+				<?php while( have_rows('credits') ): the_row(); ?>
+				
+				<li><span class="credit-role"><?php the_sub_field('role');?>:</span>&nbsp;<?php the_sub_field('name');?></li>
+						
+
+				<?php endwhile; ?>
+
+				</ul>
+			</div>
+
+		</div>
+	</section>
+
+<?php endif;?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+<?php // if (is_single("Mana")) : ?>
 
 	<section class="wrap dark credits">
 		<div class="innerWrap medium-width">
@@ -156,11 +205,11 @@ get_header(); ?>
 		</div>
 	</section>
 
-<?php endif;?>
+<?php // endif;?>
 
 
 
-
+ -->
 
 
 
